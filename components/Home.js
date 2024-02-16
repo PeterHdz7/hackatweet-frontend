@@ -4,11 +4,12 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../reducers/user";
 import { useEffect } from "react";
 
 function Home() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const user = useSelector((state) => state.user.value);
   //Exemple d'infos users récupérées et utilisation dans la page Home
@@ -21,9 +22,9 @@ function Home() {
 
   // Redirrection de l'utilisateur s'il n'a pas de token
 
-  // useEffect(() => {
-  //   if (!user.token) router.push("/accueil");
-  // }, [user]);
+  useEffect(() => {
+    if (!user.isConnected) router.push("/");
+  }, [user]);
 
   const handleLogout = () => {
     dispatch(logout());

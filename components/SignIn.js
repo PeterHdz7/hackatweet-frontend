@@ -2,9 +2,11 @@ import styles from "../styles/Acceuil.module.css";
 import { Button, Modal } from "antd";
 import { login, logout } from "../reducers/user";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import Link from 'next/link';
+import { useRouter } from "next/router";
 function SignIn() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [signInUsername, setSignInUsername] = useState("");
@@ -13,6 +15,7 @@ function SignIn() {
   const showModal = () => {
     setOpen(true);
   };
+  
   const handleLogin = () => {
     fetch("http://localhost:3000/users/signin", {
       method: "POST",
@@ -25,6 +28,7 @@ function SignIn() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
+
           dispatch(
             login({ username: signInUsername, firstname: signInFirstname })
           );
@@ -41,12 +45,18 @@ function SignIn() {
   };
 const user = useSelector(state => state.user.value);
 console.log('newUser', user);
+
+useEffect(() => {
+    if (user.isConnected){ router.push('/home')};
+}, [user])
+
   return (
     <div className={styles.buttonContainer}>
       {" "}
       <Button type="primary" onClick={showModal}>
         Sign in
       </Button>
+     
       <Modal
         title="Create your Hackatweet account"
         open={open}
@@ -72,7 +82,8 @@ console.log('newUser', user);
             value={signInPassword}
           ></input>
         </div>
-      </Modal>
+      </Modal>  
+
     </div>
   );
 }

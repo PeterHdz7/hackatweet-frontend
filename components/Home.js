@@ -2,15 +2,13 @@ import styles from "../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
-<<<<<<< HEAD
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../reducers/user";
 import { useEffect } from "react";
-=======
 import LastTweets from "./LastTweets"; //ajout JF
->>>>>>> second
+
 
 function Home() {
   const dispatch = useDispatch();
@@ -58,7 +56,7 @@ function Home() {
         </div>
       </div>
       <div style={{ flex: 2, border: "1px solid white" }}><LastTweets/></div> 
-      {/* Remettre hf */}
+      <LastTweets />
       <div style={{ flex: 1 }}>wc</div>
     </div>
   );

@@ -52,7 +52,7 @@ function Acceuil() {
           </Button>
           <Modal
             title="Create your Hackatweet account"
-            visible={open}
+            open={open}
             onOk={handleRegister}
             onCancel={handleCancel}
             okButtonProps={{

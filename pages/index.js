@@ -1,7 +1,7 @@
-import Home from '../components/Acceuil';
+import Acceuil from '../components/Acceuil';
 
 function Index() {
-  return <Home />;
+  return <Acceuil />;
 }
 
 export default Index;

@@ -24,3 +24,13 @@
     text-align: center;
     background-color: #fff; /* Couleur de fond du côté droit */
   }
+
+  .buttonContainer {
+    margin-top: 10px; /* Ajoutez ou ajustez la marge selon vos besoins */
+  }
+  
+  .columnContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Ajoutez ou ajustez l'espacement vertical entre les éléments selon vos besoins */
+  }

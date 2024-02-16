@@ -1,23 +1,55 @@
 .main {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-}
-
-.title {
+  justify-content: center;
+  align-items: stretch;
   line-height: 1.15;
-  font-size: 4rem;
+  background-color: rgb(13, 20, 20);
 }
 
-.homePage {
-
-  display: flex;
-}
-
-.leftSide {
+.leftSide {  
   display: flex;
   flex-direction: column;
-  color: aliceblue;
-  background-color: black;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 2%;
+}
+
+.top {
+  width: 100px;
+  color: white;
+  font-size: 3rem;
+}
+
+.bottom {
+  display: flex;
+  color: white;
+}
+
+.name {
+  font-size: 3vh;
+}
+
+/* .bottomTop {
+  margin: 10px;
+} */
+
+.userSection {
+	font-size: 15px;
+	cursor: pointer;
+  background-color: rgb(13, 20, 20);
+  color: white;
+  border-radius: 50px;
+  border: 1px white solid;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 2vh;
+}
+
+.icone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1vh;
+  font-size: 3vh;
 }

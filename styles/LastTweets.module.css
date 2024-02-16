@@ -1,0 +1,74 @@
+.main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: stretch;
+    line-height: 1.15;
+    background-color: rgb(13, 20, 20);
+  }
+  
+  .leftSide {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2%;
+  }
+  
+  .top {
+    width: 100px;
+    color: white;
+    font-size: 3rem;
+  }
+  
+  .bottom {
+    display: flex;
+    color: white;
+  }
+  
+  .name {
+    font-size: 3vh;
+  }
+  
+  /* .bottomTop {
+    margin: 10px;
+  } */
+  
+  .userSection {
+      font-size: 15px;
+      cursor: pointer;
+    background-color: rgb(13, 20, 20);
+    color: white;
+    border-radius: 50px;
+    border: 1px white solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 2vh;
+  }
+  
+  .icone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vh;
+    font-size: 3vh;
+  }
+
+  .layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .default{
+    color:white
+  }
+
+  .tweetsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+    gap:32px;
+  }

@@ -56,7 +56,6 @@ function Home() {
         </div>
       </div>
       <div style={{ flex: 2, border: "1px solid white" }}><LastTweets/></div> 
-      <LastTweets />
       <div style={{ flex: 1 }}>wc</div>
     </div>
   );

@@ -1,43 +1,12 @@
 import styles from '../styles/Acceuil.module.css';
-import React, { useState } from "react";
-import { Button, Modal } from "antd";
-import { login, logout } from '../reducers/user';
-import { UseSelector, useDispatch } from 'react-redux';
+import React from "react";
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+
 
 function Acceuil() {
 
-  const dispatch = useDispatch();
-
-  const [open, setOpen] = useState(true);
-  const[signUpUsername, setSignUpUsername] = useState('')
-  const[signUpFirstname, setSignUpFirstname] = useState('')
-  const[signUpPassword, setSignUpPassword] = useState('')
-  const showModal = () => {
-    setOpen(true);
-  };
-
-  const handleRegister = () => {
-		fetch('http://localhost:3000/users/signup', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ username: signUpUsername, firstname: signUpFirstname ,password: signUpPassword }),
-		}).then(response => response.json())
-			.then(data => {
-				if (data.result) {
-					dispatch(login({ username: signUpUsername, firstname: signUpFirstname, token: data.token }));
-					setSignUpUsername('');
-					setSignUpPassword('');
-          setSignUpFirstname('');
-					setIsModalVisible(false)
-				}
-			});
-	};
-
   
-  const handleCancel = (e) => {
-    console.log(e);
-    setOpen(false);
-  };
   return (
     <div className={styles.homepageContainer}>
       <div className={styles.imageContainer}>
@@ -70,10 +39,12 @@ function Acceuil() {
             </div>
           </Modal>
         </div>
+        <SignIn/>
         <p>Already have an account?</p>
-        <button>Sign in</button>
+        <SignUp/>
+        </div>
       </div>
-    </div>
+    
   );
 }
 
